@@ -1,0 +1,518 @@
+
+html {
+    scroll-behavior: smooth;
+  }
+  .section {
+    padding: 100px;
+    margin: 50px 0;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+  }
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    background-image: url('images/back.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    padding: 20px 0;
+  }
+
+  /* Overlay text over the background */
+  .overlay-text {
+    position: absolute;
+    top: 20%; /* Adjust position of text */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 30px;
+    font-family: Arial, sans-serif;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  /* Slides */
+  .mySlides {
+    display: none;
+    position: relative;
+    text-align: center;
+  }
+
+  .mySlides img {
+    width: 80%; /* Adjust image size */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Text on the individual slides */
+  .text {
+    color: white;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 10px 20px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 10%; /* Place the text at the bottom of the image */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+
+  /* Dots/Indicators */
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+  }
+
+  .dot.active {
+    background-color: #717171;
+  }
+
+  /* Add fade animation */
+  .fade {
+    animation: fade 1.5s;
+  }
+
+  @keyframes fade {
+    from { opacity: 0.4 }
+    to { opacity: 1 }
+  }
+ .navigation-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:pink; /* Semi-transparent background */
+    padding: 8px 15px;
+    border-radius: 50px;
+    box-shadow: #000;
+}
+.bar ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bar a {
+    text-decoration: none;
+    color:black;
+    padding: 7px 9px;
+    transition: background 0.3s;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.bar li {
+    margin: 0 10px;
+    position: relative;
+}
+.bar a:hover {
+    background-color:yellowgreen;
+    border-radius: 8px;
+    color: #000
+
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.images-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.images-container img {
+    width: 500px;
+    height: 500px;
+    display: block;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Product Container */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Product Card */
+.product-card {
+    width: 200px;
+    perspective: 1000px; /* For 3D effect */
+    text-decoration: none;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Ensures the container is square */
+    overflow: hidden;
+    border-radius: 10px;
+    transform: rotateY(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.product-card:hover .image-container {
+    transform: rotateY(180deg); /* 3D rotation */
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images are of similar size */
+    border-radius: 10px;
+}
+
+/* Price Tag */
+.price-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    animation: fadeInRight 1s ease;
+}
+
+/* Discount Icon */
+.discount-icon {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    animation: slideInUp 1s ease;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        width: 90%;
+    }
+}
+
+.animated-banner {
+    background-color: red; /* Initial background color */
+    color: white; /* Text color */
+    font-size: 24px;
+    text-align: center;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    animation: colorChange 5s infinite; /* Animation name and duration */
+}
+
+/* Keyframes for the color animation */
+@keyframes colorChange {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: green;
+    }
+    50% {
+        background-color: blue;
+    }
+    75% {
+        background-color: orange;
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+<!--thisarea-->
+.hr-with-text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.hr-with-text::before,
+.hr-with-text::after {
+    content: "";
+    flex: 1;
+    border-bottom: 2px solid black; /* Line styling */
+    margin: 0 10px; /* Space around the text */
+}
+
+.hr-with-text span {
+    font-size: 16px;
+    font-weight: bold;
+    color: black; /* Text color */
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color:greenyellow;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Product Container */
+.product-containers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Product Card */
+.product-cards {
+    width: 200px;
+    perspective: 1000px; /* For 3D effect */
+    text-decoration: none;
+}
+
+.image-containers {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Ensures the container is square */
+    overflow: hidden;
+    border-radius: 10px;
+    transform: rotateY(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.product-cards:hover .image-containers {
+    transform: rotateY(180deg); /* 3D rotation */
+}
+
+.image-containers img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images are of similar size */
+    border-radius: 10px;
+}
+
+/* Price Tag */
+.price-tags {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    animation: fadeInRight 1s ease;
+}
+
+/* Discount Icon */
+.discount-icons {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    animation: slideInUp 1s ease;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        width: 90%;
+    }
+}
+.footer-area{
+    padding: 40px 0px;
+    background-color: #2874f0;
+    color: #fff;
+}
+.footer-area a{
+    text-decoration: none;
+}
+.footer-area .footer-heading{
+    font-size: 24px;
+    color: #fff;
+}
+.footer-area .footer-underline{
+    height: 1px;
+    width: 70px;
+    background-color: #ddd;
+    margin: 10px 0px;
+}
+.copyright-area{
+    padding: 14px 0px;
+    background-color: #262626;
+}
+.copyright-area p{
+    margin-bottom: 0px;
+    color: #fff;
+}
+.copyright-area .social-media{
+    text-align: end;
+}
+.copyright-area .social-media a{
+    margin: 0px 10px;
+    color: #fff;
+    width: 20px;
+}
+
+
+.icon-container {
+    display: flex;
+    gap: 20px;
+  }
+
+  .icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .icon:hover {
+    transform: scale(1.2);
+  }
+
+  .icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: conic-gradient(
+      red, orange, yellow, green, cyan, blue, violet, red
+    );
+    animation: spin 2s linear infinite;
+    z-index: -1;
+    padding: 6px;
+    -webkit-mask: radial-gradient(circle, transparent 60%, black 62%);
+            mask: radial-gradient(circle, transparent 60%, black 62%);
+  }
+
+  .icon i {
+    font-size: 24px;
+    color: #000000;
+    transition: color 0.3s ease;
+  }
+
+  .icon:hover i {
+    color: #ffffff;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
